@@ -1,11 +1,14 @@
-%% Main entry point for the fundus cataract analysis pipeline
-% Edit config/config_default.m before running this file.
+%% MAIN.M
+% Main entry point for the fundus cataract analysis pipeline.
+%
+% This flat version assumes that all .m files are placed in the same
+% directory: main.m, config_default.m, and all run_*.m files.
+% Edit config_default.m before running this file.
 
 clear; clc; close all;
 
 projectRoot = fileparts(mfilename('fullpath'));
-addpath(fullfile(projectRoot, 'config'));
-addpath(genpath(fullfile(projectRoot, 'src')));
+addpath(projectRoot);
 
 cfg = config_default(projectRoot);
 
@@ -31,7 +34,7 @@ end
 
 if ~cfg.run.extractLBP && ~cfg.run.plotIntensityHistograms && ...
         ~cfg.run.plotGlobalLBP && ~cfg.run.binaryClassification
-    warning('No stage is enabled. Open config/config_default.m and set one or more cfg.run.* flags to true.');
+    warning('No stage is enabled. Open config_default.m and set one or more cfg.run.* flags to true.');
 end
 
 fprintf('\nDone.\n');

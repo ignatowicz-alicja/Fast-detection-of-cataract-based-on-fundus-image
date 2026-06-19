@@ -1,0 +1,42 @@
+# MATLAB
+*.asv
+*.m~
+*.mex*
+*.mlappinstall
+*.slxc
+codegen/
+slprj/
+
+# Generated outputs
+results/**
+!results/.gitkeep
+
+# Data and generated features
+data/**
+!data/README.md
+features/**/*.mat
+features/**/*.csv
+features/**/*.xlsx
+features/**/*.png
+features/**/*.jpg
+features/**/*.jpeg
+features/**/*.tif
+features/**/*.tiff
+features/**/*.bmp
+!features/README.md
+
+# Models and large artifacts
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.mat
+*.zip
+*.tar
+*.tar.gz
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
